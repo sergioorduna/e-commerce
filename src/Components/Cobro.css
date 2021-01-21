@@ -1,0 +1,11 @@
+.cobro {
+  display: flex;
+  padding: 25px;
+  background-color: white;
+  height: max-content;
+}
+
+.cobro_titulo {
+  margin-right: 10px;
+  padding: 10px;
+}
