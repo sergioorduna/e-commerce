@@ -1,0 +1,32 @@
+.cobroProductos {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cobroProductos_image {
+  height: 180px;
+  width: 180px;
+  object-fit: contain;
+}
+
+.cobroProductos_info {
+  padding-left: 20px;
+}
+
+.cobroProductos_info > button {
+  background-color: pink;
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: black;
+  color: black;
+}
+
+.cobroProductos_rating {
+  display: flex;
+}
+
+.cobroProductos_title {
+  font-size: 17px;
+  font-weight: 600;
+}
