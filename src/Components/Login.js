@@ -2,11 +2,27 @@ import React, { useState } from "react";
 import imagenes from "../assets/imagenes";
 import "./Login.css";
 import { Link } from "react-router-dom";
+import { auth } from "../firebase";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const singIn = (e) => {
+    e.preventDefault();
+
+    // aqui deberia entrar el firebase
+  };
+
+  const register = (e) => {
+    e.preventDefault();
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        console.log(auth);
+      })
+      .catch((error) => alert(error.message));
+  };
   return (
     <div className="login">
       <Link to="/">
@@ -28,10 +44,14 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="login_botonIngresa">Ingresa</button>
+          <button type="submit" onClick={singIn} className="login_botonIngresa">
+            Ingresa
+          </button>
         </form>
         <br></br>
-        <button className="login_creaCuenta">Crea una cuenta</button>
+        <button onClick={register} className="login_creaCuenta">
+          Crea una cuenta
+        </button>
       </div>
     </div>
   );

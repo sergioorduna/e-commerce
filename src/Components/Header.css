@@ -2,7 +2,12 @@
   height: 60px;
   display: flex;
   align-items: center;
-  background-color: #30475e;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(100, 100, 133, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
   position: sticky;
   top: 0;
   z-index: 100;

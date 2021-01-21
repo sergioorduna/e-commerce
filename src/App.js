@@ -6,6 +6,7 @@ import Home from "./Components/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Cobro from "./Components/Cobro";
 import Login from "./Components/Login";
+import Payment from "./Components/Payment";
 
 function App() {
   return (
@@ -19,6 +20,11 @@ function App() {
           <Route path="/cobro">
             <Header />
             <Cobro />
+            <imagenes />
+          </Route>
+          <Route path="/payment">
+            <Header />
+            <Payment />
             <imagenes />
           </Route>
           <Route path="/">
