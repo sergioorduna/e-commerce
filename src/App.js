@@ -5,19 +5,24 @@ import Header from "./Components/Header";
 import Home from "./Components/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Cobro from "./Components/Cobro";
+import Login from "./Components/Login";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
-
         <Switch>
+          <Route path="/login">
+            <Login />
+            <imagenes />
+          </Route>
           <Route path="/cobro">
+            <Header />
             <Cobro />
             <imagenes />
           </Route>
           <Route path="/">
+            <Header />
             <Home />
             <imagenes />
           </Route>

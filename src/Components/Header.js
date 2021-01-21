@@ -13,10 +13,12 @@ function Header() {
         <img className="header_logo" src={imagenes.img1} alt="/" />
       </Link>
       <div className="header_nav">
-        <div className="header__option">
-          <span className="header__optionLineOne">Bienvenido usuario</span>
-          <span className="header__optionLineTwo">Ingresa</span>
-        </div>
+        <Link to="/login">
+          <div className="header__option">
+            <span className="header__optionLineOne">Bienvenido usuario</span>
+            <span className="header__optionLineTwo">Ingresa</span>
+          </div>
+        </Link>
         <div className="header__option">
           <span className="header__optionLineOne">Devoluciones</span>
           <span className="header__optionLineTwo">& Ordenes</span>

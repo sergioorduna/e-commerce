@@ -1,0 +1,44 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+}
+
+.login_logo {
+  background-size: cover;
+}
+
+.login_container {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 1px lightgray;
+  padding: 20px;
+}
+
+.login_container > h1 {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.login_container > form > h5 {
+  margin-bottom: 5px;
+}
+
+.login_container > form > input {
+  margin-bottom: 10px;
+  width: 98%;
+}
+
+.login_botonIngresa {
+  background-color: pink;
+  border-radius: 2px;
+  width: 100%;
+  height: 20px;
+  border: 1px solid;
+  margin-top: 5px;
+  border-color: black;
+}
