@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import React from "react";
 import imagenes from "../assets/imagenes";
 import "./Header.css";
+import { useStateValue } from "./StateProvider";
 
 function Header() {
+  const [{ basket }, dispatch] = useStateValue();
+
   return (
     <div className="header">
       <Link to="/">
@@ -25,7 +28,7 @@ function Header() {
 
         <Link to="/cobro">
           <div className="header_optionCar">Carrito</div>
-          <span className="header_optionCarOne">0</span>
+          <span className="header_optionCarOne">{basket?.length}</span>
         </Link>
       </div>
     </div>
