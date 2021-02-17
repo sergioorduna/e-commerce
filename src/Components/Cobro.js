@@ -5,12 +5,13 @@ import { useStateValue } from "./StateProvider";
 import Subtotal from "./Subtotal";
 
 function Cobro() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
 
   return (
     <div className="cobro">
       <div className="cobro_izquierda"></div>
       <div>
+        <h3>Hola, {user?.email}</h3>
         <h2 className="cobro_titulo">Bienvenido a su carrito de compras.</h2>
 
         {basket.map((item) => (
