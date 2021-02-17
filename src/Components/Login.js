@@ -1,15 +1,23 @@
 import React, { useState } from "react";
 import imagenes from "../assets/imagenes";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { auth } from "../firebase";
 
 function Login() {
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const singIn = (e) => {
     e.preventDefault();
+
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        history.push("/");
+      })
+      .catch((error) => alert(error.message));
 
     // aqui deberia entrar el firebase
   };
@@ -20,6 +28,9 @@ function Login() {
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
         console.log(auth);
+        if (auth) {
+          History.push("/");
+        }
       })
       .catch((error) => alert(error.message));
   };

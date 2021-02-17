@@ -9,6 +9,7 @@ import morada from "./img/morada.jpg";
 import corazones from "./img/corazones.jpg";
 import aliens from "./img/aliens.jpg";
 import colores from "./img/colores.jpg";
+import logo3 from "./img/logo3.jpg";
 
 export default {
   img1: logoyajiscafe,
@@ -22,4 +23,5 @@ export default {
   img9: corazones,
   img10: aliens,
   img11: colores,
+  img12: logo3,
 };

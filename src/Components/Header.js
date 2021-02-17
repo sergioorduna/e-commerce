@@ -3,20 +3,28 @@ import React from "react";
 import imagenes from "../assets/imagenes";
 import "./Header.css";
 import { useStateValue } from "./StateProvider";
+import { auth } from "../firebase";
 
 function Header() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
+  const handleAuthenticaton = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
 
   return (
     <div className="header">
       <Link to="/">
-        <img className="header_logo" src={imagenes.img1} alt="/" />
+        <img className="header_logo" src={imagenes.img12} alt="/" />
       </Link>
       <div className="header_nav">
-        <Link to="/login">
-          <div className="header__option">
+        <Link to={!user && "/login"}>
+          <div onClick={handleAuthenticaton} className="header__option">
             <span className="header__optionLineOne">Bienvenido usuario</span>
-            <span className="header__optionLineTwo">Ingresa</span>
+            <span className="header__optionLineTwo">
+              {user ? "Cerrar Sesión" : "Ingresa"}
+            </span>
           </div>
         </Link>
         <div className="header__option">
